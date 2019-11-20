@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<beans
+	default-destroy-method="destroy"
+	default-init-method="afterPropertiesSet"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+	<bean class="com.phonebook.service.impl.PhonebookAddressLocalServiceImpl" id="com.phonebook.service.PhonebookAddressLocalService" />
+	<bean class="com.phonebook.service.impl.PhonebookAddressServiceImpl" id="com.phonebook.service.PhonebookAddressService" />
+	<bean class="com.phonebook.service.persistence.impl.PhonebookAddressPersistenceImpl" id="com.phonebook.service.persistence.PhonebookAddressPersistence" parent="basePersistence" />
+</beans>

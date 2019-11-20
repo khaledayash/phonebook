@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_0_0.dtd">
+
+<service-builder package-path="com.phonebook">
+	<namespace>PHONEBOOK</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="PhonebookAddress" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="addressId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+
+
+		<!-- Other fields -->
+
+		<column name="firstName" type="String" />
+		<column name="lastName" type="String" />
+		<column name="email" type="String" />
+		<column name="mobileNr" type="String" />
+
+		<!-- Order -->
+
+		<order by="desc">
+			<order-column name="email" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="Group" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder name="User" return-type="Collection">
+			<finder-column name="userId"></finder-column>
+		</finder>
+		<finder name="GroupAndUser" return-type="Collection">
+			<finder-column name="userId"></finder-column>
+			<finder-column name="groupId"></finder-column>
+		</finder>
+
+	</entity>
+</service-builder>

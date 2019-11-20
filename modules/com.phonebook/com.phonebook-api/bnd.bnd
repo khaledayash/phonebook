@@ -1,0 +1,10 @@
+Bundle-Name: com.phonebook-api
+Bundle-SymbolicName: com.phonebook.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.phonebook.exception,\
+	com.phonebook.model,\
+	com.phonebook.service,\
+	com.phonebook.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.phonebook-service/service.xml
